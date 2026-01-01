@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Breakdown History</title>
+
+    <!-- CSS LINK -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="page-title">Breakdown Log System</div>
+
+<div class="container">
+    <h2>Breakdown History</h2>
+
+    <table>
+        <tr>
+            <th>Date</th>
+            <th>Shop</th>
+            <th>Machine</th>
+            <th>Start Time</th>
+            <th>End Time</th>
+            <th>Down Time (Min)</th>
+            <th>Action Taken</th>
+            <th>Root Cause</th>
+            <th>Attended By</th>
+            <th>Spare Used</th>
+        </tr>
+
+        {% for row in records %}
+        <tr>
+            <td>{{ row.breakdown_date }}</td>
+            <td>{{ row.shop_name }}</td>
+            <td>{{ row.machine_name }}</td>
+            <td>{{ row.start_time_new }}</td>
+            <td>{{ row.end_time_new }}</td>
+            <td>{{ row.down_time }}</td>
+            <td>{{ row.action_taken }}</td>
+            <td>{{ row.root_cause }}</td>
+            <td>{{ row.attended_by }}</td>
+            <td>{{ row.spare_used }}</td>
+        </tr>
+        {% endfor %}
+    </table>
+
+</div>
+
+</body>
+</html>

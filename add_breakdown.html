@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add Breakdown</title>
+
+    <!-- CSS LINK (CORRECT FOR FLASK) -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+
+    <!-- REQUIRED FOR SCREEN FIT -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+
+<div class="page-title">Breakdown Log System</div>
+
+<div class="container">
+    <h2>Add Breakdown</h2>
+
+    <form method="POST" action="/add">
+
+        <label>Date</label>
+        <input type="date" name="date" required>
+
+        <label>Shop</label>
+        <input type="text" name="shop" required>
+
+        <label>Machine</label>
+        <input type="text" name="machine" required>
+
+        <label>Start Time</label>
+        <input type="time" name="start_time_new" required>
+
+        <label>End Time</label>
+        <input type="time" name="end_time_new" required>
+
+        <label>Problem</label>
+        <textarea name="problem"></textarea>
+
+        <label>Action Taken</label>
+        <textarea name="action"></textarea>
+
+        <label>Root Cause</label>
+        <textarea name="root_cause"></textarea>
+
+        <label>Attended By</label>
+        <input type="text" name="attended_by">
+
+        <label>Spare Used</label>
+        <input type="text" name="spare">
+
+        <button type="submit">Save Breakdown</button>
+    </form>
+</div>
+
+</body>
+</html>
